@@ -9,31 +9,8 @@
 </head>
 
 <body>
-    <?php 
-        if ($_POST) {
-            $nome = $_POST["nome"] ?? NULL;
-            $idade = $_POST["idade"] ?? NULL;
-            $email = $_POST["email"] ?? NULL;
-            $hobbies = $_POST["hobbies"] ?? NULL;
-
-            if(empty($nome) || empty($idade) || empty($email) || empty($hobbies)){
-                echo "<script>window.alert('[ERRO!] A campos que precisam ser preenchidos!')</script>";
-            }
-            if (strlen($nome)) {
-                echo "<script>window.alert('[ERRO!] preencha o seu nome completo!')</script>";
-            }
-            if ($idade < 0) {
-                echo "<script>window.alert('[ERRO!] Idade invalida!')</script>";
-            }
-            if ($idade < 18) {
-                echo "<script>window.alert('[ERRO!] Não e permitido o cadastro de menores de idade!')</script>";
-            }
-            // echo "<script>location.href='listar.php'</script>";
-            // exit;
-        }
-    ?>
     <div class="container">
-        <form class="row g-3 mt-5" method="post" action="listar.php">
+        <form class="row g-3 mt-5" method="post" action="recupera-dados.php">
             <div class="col-md-6">
                 <label for="idNome" class="form-label">Nome</label>
                 <input type="text" class="form-control" name="nome" id="idNome">
